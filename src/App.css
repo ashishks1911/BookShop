@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.btn-primary {
+  background-color: #facc15;
+  color: #000;
+  padding: 8px 32px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.btn-primary:hover{
+  background-color: #ca8a04;
+}

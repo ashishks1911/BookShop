@@ -25,12 +25,12 @@ const Carousal = () => {
   }
 
   return (
-    <div className='relative overflow-hidden'>
+    <div className='relative overflow-hidden h-[50rem] w-[70%] mx-auto'>
       <div className='flex'>
         {slides.map((slide, index) => {
           return (
-            <div key={index} className={`overflow-hidden mx-auto ${activeIndex === index ? 'block' : 'hidden'}`}>
-              <img src={slide.src} alt={slide.alt} height={575} width={862} />
+            <div key={index} className={`overflow-hidden w-full h-[50rem] mx-auto ${activeIndex === index ? 'block' : 'hidden'}`}>
+              <img src={slide.src} alt={slide.alt} className='w-full h-full object-fill' />
             </div>
           )
         })}

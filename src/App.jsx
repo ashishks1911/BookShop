@@ -1,13 +1,13 @@
-import Carousal from './components/Carousal'
-import Header from './components/Header'
+import { Outlet } from 'react-router-dom'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div>
-      <Header />
-      <div className='w-[60%] m-auto'>
-        <Carousal />
-      </div>
+      <Navbar/>
+      <main className='md:px-24 min-h-screen'>
+        <Outlet />
+      </main>
     </div>
   )
 }
