@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import BookCard from './books/BookCard';
+import BookSlide from './books/BookSlide';
 
 const categories = ['Choose a genre', 'business', 'fiction', 'horror', 'adventure']
 const TopSellers = () => {
@@ -21,7 +22,7 @@ const TopSellers = () => {
   }, []);
 
   return (
-    <div className='py-2'>
+    <div className='py-2 px-3 md:px-0'>
       <h2 className='md:text-3xl font-semibold text-xl mb-3'>Top Sellers</h2>
       {/* category filter */}
       <div>
@@ -32,10 +33,7 @@ const TopSellers = () => {
             ))
           }
         </select>
-
-        {
-          filteredBooks.map((book) => <BookCard book={book} />)
-        }
+        <BookSlide books = {filteredBooks}/>
       </div>
     </div>
   )

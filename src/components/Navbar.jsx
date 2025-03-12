@@ -20,18 +20,18 @@ const Navbar = () => {
       <nav className="flex justify-between items-center">
 
         {/* Left Side */}
-        <div className="flex items-center gap-8">
-          <HiMiniBars3CenterLeft className="size-6" />
+        <div className="flex items-center sm:gap-8">
+          <HiMiniBars3CenterLeft className="size-7" />
 
           {/* Search input */}
-          <div className="w-60 space-x-2 relative">
-            <IoSearchOutline className="absolute top-2 left-3" />
-            <input type="text" placeholder="Search by name, author or title..." className="bg-[#eaeaea] w-full py-1 px-6 rounded-md focus:outline-none" />
+          <div className="md:w-60 space-x-2 relative w-[14rem] flex items-center">
+            <IoSearchOutline className="absolute top-3 left-4 inline-block" />
+            <input type="text" placeholder="Search books ..." className="bg-[#eaeaea] w-full py-2 px-8 rounded-md focus:outline-none" />
           </div>
         </div>
 
         {/* Right Side */}
-        <div className="flex space-x-4 items-center">
+        <div className="flex space-x-2 sm:space-x-4 items-center">
           {
             currentUser ? <>
               <button type="button" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
@@ -58,7 +58,7 @@ const Navbar = () => {
               </Link>
           }
           <button>
-            <HiOutlineHeart className="size-6" />
+            <HiOutlineHeart className="size-6 hidden sm:block" />
           </button>
           <Link className="px-2 relative flex">
             <HiOutlineShoppingCart className="size-6" />
