@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import BookSlide from './books/BookSlide';
+import BookSlide from '../books/BookSlide';
 
 const Recommended = () => {
 
@@ -15,7 +15,7 @@ const Recommended = () => {
   }, []);
 
   return (
-    <div className='py-2 px-3 md:px-0'>
+    <div className='py-12 px-3 md:px-0'>
       <h2 className='md:text-3xl font-semibold text-xl mb-3'>Recommended for you</h2>
       <BookSlide books={books.slice(8,18)} />
     </div>

@@ -3,6 +3,7 @@ import { HiMiniBars3CenterLeft, HiOutlineHeart, HiOutlineShoppingCart, HiOutline
 import { IoSearchOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import avatarImg from '../assets/avatar.png'
+import { useSelector } from "react-redux";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard" },
@@ -14,6 +15,7 @@ const Navbar = () => {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState();
   const currentUser = true;
+  const cartItems = useSelector(state => state.cart.cartItems);
 
   return (
     <header className="max-w-screen mx-auto md:px-24 px-4 py-6">
@@ -21,7 +23,9 @@ const Navbar = () => {
 
         {/* Left Side */}
         <div className="flex items-center sm:gap-8">
+          <Link to={'/'}>
           <HiMiniBars3CenterLeft className="size-7" />
+          </Link>
 
           {/* Search input */}
           <div className="md:w-60 space-x-2 relative w-[14rem] flex items-center">
@@ -60,9 +64,12 @@ const Navbar = () => {
           <button>
             <HiOutlineHeart className="size-6 hidden sm:block" />
           </button>
-          <Link className="px-2 relative flex">
+          <Link className=" relative flex" to={'/cart'}>
             <HiOutlineShoppingCart className="size-6" />
-            <span className="absolute right-1 bottom-3 bg-red-500 text-white rounded-full px-1 text-xs">0</span>
+            {
+              cartItems.length > 0 &&
+              <span className="absolute left-4 bottom-3 bg-red-500 text-white rounded-full px-1 text-xs">{cartItems.length}</span>
+            }
           </Link>
         </div>
       </nav>

@@ -1,8 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { getImageUrl } from '../../utils/getImageUrl'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../redux/features/cartSlice'
 
 const BookCard = ({ book }) => {
+  const dispatch = useDispatch();
+  const handleAddToCart = (book) => {
+    dispatch(addToCart(book))
+  }
   return (
     <div className='flex md:w-[26rem] w-[22rem] hover:shadow-lg rounded-md mt-3 border pb-3 justify-between h-[28rm]'>
 
@@ -17,7 +23,7 @@ const BookCard = ({ book }) => {
         <p className='text-gray-500 md:text-sm text-xs mb-2'>{book.description.length > 100 ? `${book.description.slice(0, 80)} ....` : book.description}</p>
         <p className='font-medium mb-2'>
           ₹ {book.newPrice} <span className='line-through text-gray-400 px-3'>₹ {book.oldPrice}</span></p>
-        <button className=' text-sm btn-primary hover:text-white absolute bottom-3'>Add to Cart</button>
+        <button className=' text-sm btn-primary hover:text-white absolute bottom-3' onClick={() => handleAddToCart(book)}>Add to Cart</button>
       </div>
     </div>
   )

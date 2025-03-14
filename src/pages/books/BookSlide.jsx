@@ -17,11 +17,11 @@ export default function BookSlide({ books }) {
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         scrollbar={{draggable:true}}
-        // navigation={true}
+        navigation={true}
         breakpoints={{
           640: {
             slidesPerView: 1,

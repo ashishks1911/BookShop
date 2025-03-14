@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import BookCard from './books/BookCard';
-import BookSlide from './books/BookSlide';
+import BookCard from '../books/BookCard';
+import BookSlide from '../books/BookSlide';
 
 const categories = ['Choose a genre', 'business', 'fiction', 'horror', 'adventure']
 const TopSellers = () => {
