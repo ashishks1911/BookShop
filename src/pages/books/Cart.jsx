@@ -19,7 +19,7 @@ const Cart = () => {
 
   const totalAmount = cartItems.reduce((acc, item) => acc + item.newPrice, 0);
   return (
-    <div className='shadow-md w-[50%] mx-auto'>
+    <div className='shadow-md md:w-[50%] w-[94%] mx-auto'>
       <div className='flex justify-between px-2 my-4'>
         <h1 className='font-semibold text-xl'>Shopping Cart</h1>
         <button className='text-sm text-white bg-red-500 rounded px-2 py-1' onClick={handleClearCart}>Clear Cart</button>
